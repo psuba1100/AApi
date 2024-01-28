@@ -1,4 +1,4 @@
-export function ShuffleArray(array) {
+ function ShuffleArray(array) {
     const shuffledArray = [...array];
 
     for (let i = shuffledArray.length - 1; i > 0; i--) {
@@ -9,7 +9,7 @@ export function ShuffleArray(array) {
     return shuffledArray;
 }
 
-export function GetRandomIntiger(min, max) {
+ function GetRandomIntiger(min, max) {
     const randomDecimal = Math.random();
 
     const randomWholeNumber = Math.floor(randomDecimal * (max - min + 1)) + min;
@@ -17,7 +17,7 @@ export function GetRandomIntiger(min, max) {
     return randomWholeNumber;
 }
 
-export function GetRandomIntigerInclusive(min, max) {
+ function GetRandomIntigerInclusive(min, max) {
     const randomDecimal = Math.random();
 
     const randomWholeNumber = Math.floor(randomDecimal * (max - min + 1)) + min;
@@ -25,37 +25,37 @@ export function GetRandomIntigerInclusive(min, max) {
     return randomWholeNumber;
 }
 
-export function Loop(count, callback) {
+ function Loop(count, callback) {
     for (let i = 0; i < count; i++) {
         callback();
     }
 }
 
-export function Log(message) {
+ function Log(message) {
     console.log(message)
 }
 
-export function Error(message) {
+ function Error(message) {
     console.error(message)
 }
 
-export function Warn(message) {
+ function Warn(message) {
     console.warn(message)
 }
 
-export function Debug(message) {
+ function Debug(message) {
     console.debug(message)
 }
 
-export function Sleep(ms) {
+ function Sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-export function SleepS(s) {
+ function SleepS(s) {
     return new Promise(resolve => setTimeout(resolve, s*1000));
 }
 
-export async function SendDiscordWebhookMessage(message) {
+ async function SendDiscordWebhookMessage(message) {
     try {
         const response = await fetch(webhookUrl, {
             method: 'POST',
